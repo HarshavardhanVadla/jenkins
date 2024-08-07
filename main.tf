@@ -16,7 +16,7 @@ resource "aws_internet_gateway" "mod" {
 resource "aws_subnet" "mod" {
   vpc_id = aws_vpc.mod.id
   cidr_block = "10.0.1.0/24"
-  availability_zone = "sa-east-1a"
+  availability_zone = "ca-central-1a"
   map_public_ip_on_launch = true
   tags = {
     Name = "public-mod-subnet"
@@ -76,7 +76,7 @@ resource "aws_instance" "mod" {
   key_name = "jenkins"
   associate_public_ip_address = "true"
   subnet_id = aws_subnet.mod.id
-  availability_zone = "sa-east-1a"
+  availability_zone = "ca-central-1a"
   tags = {
     Name = "mod-ec2"
   }
