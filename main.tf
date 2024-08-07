@@ -68,11 +68,6 @@ resource "aws_security_group" "mod" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-Create keypair
-resource "aws_key_pair" "mod" {
-  key_name   = "mod-key"
-  public_key = file("C:\Users\harsh\Downloads\jenkins (2).pem")
-}
 # Create Instance
 resource "aws_instance" "mod" {
   ami = ami-0dcab815e6ee910aa
