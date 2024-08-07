@@ -70,10 +70,10 @@ resource "aws_security_group" "mod" {
 }
 # Create Instance
 resource "aws_instance" "mod" {
-  ami = ami-0dcab815e6ee910aa
+  ami = "ami-0dcab815e6ee910aa"
   instance_type = "t2.micro"
   vpc_security_group_ids = [aws_security_group.mod.id]
-  key_name = mod-key
+  key_name = "jenkins"
   associate_public_ip_address = "true"
   subnet_id = aws_subnet.mod.id
   availability_zone = "sa-east-1a"
